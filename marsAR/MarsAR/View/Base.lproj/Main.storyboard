@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87x-6v-9Yv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87x-6v-9Yv">
     <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,32 +18,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="O8i-eu-5pc">
-                                <rect key="frame" x="262" y="503" width="310.5" height="170.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10.5_iPadPro" translatesAutoresizingMaskIntoConstraints="NO" id="1Ou-1z-o5m">
+                                <rect key="frame" x="0.0" y="64" width="834" height="1048"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="O8i-eu-5pc">
+                                <rect key="frame" x="262" y="449" width="310.5" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mars AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-Bg-iZn">
+                                <rect key="frame" x="261.5" y="503" width="311" height="106"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="106" id="R3q-hV-m1b"/>
+                                    <constraint firstAttribute="width" constant="311" id="UtF-bn-crk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="88"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vty-zF-Qz9" userLabel="Bottom Container">
+                                <rect key="frame" x="0.0" y="609" width="834" height="503"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mars AR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-Bg-iZn">
-                                        <rect key="frame" x="0.0" y="0.0" width="310.5" height="105.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="88"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqr-86-WwL">
-                                        <rect key="frame" x="110.5" y="105.5" width="90" height="65"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                                        <state key="normal" title="Start">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noc-DU-YRa" userLabel="Start Button">
+                                        <rect key="frame" x="312" y="213" width="211" height="76"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="76" id="Zsc-Jl-ZQG"/>
+                                            <constraint firstAttribute="width" constant="211" id="gHv-En-2Yp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="startButton"/>
                                         <connections>
-                                            <segue destination="BV1-FR-VrT" kind="show" identifier="Set Mars" id="2a7-uv-x7W"/>
+                                            <segue destination="BV1-FR-VrT" kind="show" id="y1w-np-zTe"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="noc-DU-YRa" firstAttribute="centerY" secondItem="vty-zF-Qz9" secondAttribute="centerY" id="VUP-ul-YAH"/>
+                                    <constraint firstItem="noc-DU-YRa" firstAttribute="centerX" secondItem="vty-zF-Qz9" secondAttribute="centerX" id="gS0-Sy-1Yn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="O8i-eu-5pc" firstAttribute="centerY" secondItem="tFj-wL-sNJ" secondAttribute="centerY" id="9Ko-7Q-ONC"/>
-                            <constraint firstItem="O8i-eu-5pc" firstAttribute="centerX" secondItem="tFj-wL-sNJ" secondAttribute="centerX" id="LE8-aW-fMd"/>
+                            <constraint firstItem="1MZ-Bg-iZn" firstAttribute="centerY" secondItem="m5z-2h-QFG" secondAttribute="centerY" id="A0M-tQ-M3V"/>
+                            <constraint firstItem="1Ou-1z-o5m" firstAttribute="top" secondItem="tFj-wL-sNJ" secondAttribute="top" id="AtD-BE-tNl"/>
+                            <constraint firstItem="vty-zF-Qz9" firstAttribute="leading" secondItem="tFj-wL-sNJ" secondAttribute="leading" id="G6k-aU-his"/>
+                            <constraint firstItem="vty-zF-Qz9" firstAttribute="bottom" secondItem="tFj-wL-sNJ" secondAttribute="bottom" id="OEx-pF-tr1"/>
+                            <constraint firstItem="vty-zF-Qz9" firstAttribute="trailing" secondItem="tFj-wL-sNJ" secondAttribute="trailing" id="RXM-lm-cwv"/>
+                            <constraint firstItem="1Ou-1z-o5m" firstAttribute="trailing" secondItem="tFj-wL-sNJ" secondAttribute="trailing" id="aUP-Kn-fA1"/>
+                            <constraint firstItem="1Ou-1z-o5m" firstAttribute="bottom" secondItem="tFj-wL-sNJ" secondAttribute="bottom" id="bGC-7q-Xwc"/>
+                            <constraint firstItem="1MZ-Bg-iZn" firstAttribute="centerX" secondItem="m5z-2h-QFG" secondAttribute="centerX" id="jHt-t2-8PC"/>
+                            <constraint firstItem="vty-zF-Qz9" firstAttribute="top" secondItem="1MZ-Bg-iZn" secondAttribute="bottom" id="q5W-J6-nje"/>
+                            <constraint firstItem="1Ou-1z-o5m" firstAttribute="leading" secondItem="tFj-wL-sNJ" secondAttribute="leading" id="tTJ-9E-uae"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tFj-wL-sNJ"/>
                     </view>
@@ -51,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgd-B4-QZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="521.58273381294964" y="24.820143884892087"/>
+            <point key="canvasLocation" x="520.14388489208636" y="23.741007194244606"/>
         </scene>
         <!--Mars View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -88,4 +112,8 @@
             <point key="canvasLocation" x="-559" y="-106"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="10.5_iPadPro" width="1668" height="2224"/>
+        <image name="startButton" width="886" height="284"/>
+    </resources>
 </document>
