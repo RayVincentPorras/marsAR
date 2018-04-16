@@ -46,6 +46,22 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
             duration: 60)
         )
         
+        //Add sun to scene
+        let sun = SCNSphere(radius: 0.5)
+        
+        let sunMaterial = SCNMaterial()
+        
+        sunMaterial.diffuse.contents = UIImage(named: "art.scnassets/sun.jpg")
+        
+        sun.materials = [sunMaterial]
+        
+        let sunNode = SCNNode()
+        
+        sunNode.position = SCNVector3(x: 0, y: 0, z: -5.0)
+        
+        sunNode.geometry = sun
+        
+        sceneView.scene.rootNode.addChildNode(sunNode)
         
     }
     
