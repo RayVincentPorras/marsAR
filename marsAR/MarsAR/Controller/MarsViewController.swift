@@ -21,7 +21,7 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Create a new scene
-        let mars = SCNSphere(radius: 0.2)
+        let mars = SCNSphere(radius: 0.5)
         
         let material = SCNMaterial()
         
@@ -43,11 +43,11 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
             x: 0,
             y: 5,
             z: 0,
-            duration: 60)
+            duration: 2800)
         )
         
         //Add sun to scene
-        let sun = SCNSphere(radius: 0.5)
+        let sun = SCNSphere(radius: 5.0)
         
         let sunMaterial = SCNMaterial()
         
@@ -57,11 +57,18 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
         
         let sunNode = SCNNode()
         
-        sunNode.position = SCNVector3(x: 0, y: 0, z: -5.0)
+        sunNode.position = SCNVector3(x: 0, y: 0, z: -20.0)
         
         sunNode.geometry = sun
         
         sceneView.scene.rootNode.addChildNode(sunNode)
+        
+        sunNode.runAction(SCNAction.rotateBy(
+            x: 0,
+            y: 2.5,
+            z: 0,
+            duration: 2800)
+        )
         
     }
     
