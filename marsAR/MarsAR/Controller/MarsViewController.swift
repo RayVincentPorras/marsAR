@@ -39,36 +39,13 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
         
         sceneView.autoenablesDefaultLighting = true
         
-        node.runAction(SCNAction.rotateBy(
+        node.runAction(SCNAction.repeatForever(SCNAction.rotateBy(
             x: 0,
-            y: 5,
+            y: 1,
             z: 0,
-            duration: 2800)
+            duration: 5))
         )
         
-        //Add sun to scene
-        let sun = SCNSphere(radius: 5.0)
-        
-        let sunMaterial = SCNMaterial()
-        
-        sunMaterial.diffuse.contents = UIImage(named: "art.scnassets/sun.jpg")
-        
-        sun.materials = [sunMaterial]
-        
-        let sunNode = SCNNode()
-        
-        sunNode.position = SCNVector3(x: 0, y: 0, z: -20.0)
-        
-        sunNode.geometry = sun
-        
-        sceneView.scene.rootNode.addChildNode(sunNode)
-        
-        sunNode.runAction(SCNAction.rotateBy(
-            x: 0,
-            y: 2.5,
-            z: 0,
-            duration: 2800)
-        )
         
     }
     
@@ -92,6 +69,34 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    func createEarth() {
+        
+        //Add earth to scene
+        let earth = SCNSphere(radius: 5.0)
+        
+        let earthMaterial = SCNMaterial()
+        
+        earthMaterial.diffuse.contents = UIImage(named: "art.scnassets/earth.jpg")
+        
+        earth.materials = [earthMaterial]
+        
+        let earthNode = SCNNode()
+        
+        earthNode.position = SCNVector3(x: 0, y: 0, z: -20.0)
+        
+        earthNode.geometry = earth
+        
+        sceneView.scene.rootNode.addChildNode(earthNode)
+        
+        earthNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(
+            x: 0,
+            y: 1,
+            z: 0,
+            duration: 5))
+        )
+        
     }
     
 
