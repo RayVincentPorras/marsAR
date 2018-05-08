@@ -17,6 +17,9 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set up navigation bar items
+        setupNavigationBarItems()
+        
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -71,7 +74,19 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-    func createEarth() {
+    // Set up navigation bar
+    // Navigation bar
+    private func setupNavigationBarItems() {
+        
+        let addEarthButton = UIButton(type: .system)
+        addEarthButton.setImage(#imageLiteral(resourceName: "addEarthIcon"), for: .normal)
+        addEarthButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        addEarthButton.imageView?.contentMode = .scaleAspectFit
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addEarthButton)
+    }
+    
+    func addEarth() {
         
         //Add earth to scene
         let earth = SCNSphere(radius: 5.0)
