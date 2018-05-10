@@ -49,6 +49,8 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
             duration: 5))
         )
         
+        // Add earth
+        
         
     }
     
@@ -78,15 +80,16 @@ class MarsViewController: UIViewController, ARSCNViewDelegate {
     // Navigation bar
     private func setupNavigationBarItems() {
         
-        let addEarthButton = UIButton(type: .system)
-        addEarthButton.setImage(#imageLiteral(resourceName: "addEarthIcon"), for: .normal)
-        addEarthButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        addEarthButton.imageView?.contentMode = .scaleAspectFit
+        //let addEarthButton = UIButton(type: .system)
+        //addEarthButton.setImage(#imageLiteral(resourceName: "addEarthIcon"), for: .normal)
+        //addEarthButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        //addEarthButton.imageView?.contentMode = .scaleAspectFit
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "art.scnassets/addEarthIcon.jpeg"), style: .plain, target: self, action: #selector(addEarth))
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addEarthButton)
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addEarthButton)
     }
     
-    func addEarth() {
+    @objc func addEarth() {
         
         //Add earth to scene
         let earth = SCNSphere(radius: 5.0)
